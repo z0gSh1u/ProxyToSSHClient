@@ -1,0 +1,12 @@
+{
+  "Network": {
+    "IP": "<SSHClient>",
+    "HTTPPort": 10809,
+    "SocksPort": 10808
+  },
+  "Pipeline": {
+    "ProxyBash": "init, proxy",
+    "ProxyGitHTTP": "init, proxy",
+    "ProxyGitHubSSH": "init, proxy"
+  }
+}
