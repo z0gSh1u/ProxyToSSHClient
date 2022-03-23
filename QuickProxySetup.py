@@ -241,6 +241,35 @@ class ProxyGitHubSSH(Proxifier):
         print('[ProxyGitHubSSH.clear] Done.')
 
 
+class ProxyConda(Proxifier):
+    '''
+    
+    '''
+    def __init__(self) -> None:
+        super().__init__()
+
+    def init(self):
+        # Do nothing.
+        print('[ProxyConda.init] Done.')
+
+    def proxy(self):
+        # check args
+        assert len(ProxyIP) > 0
+        assert HTTPPort > 0
+
+        os.system('conda config --set proxy_servers.http http://{}:{}'.format(ProxyIP, HTTPPort))
+        # We dont use https here since sometimes SSL certificate is invalid.
+        os.system('conda config --set proxy_servers.https http://{}:{}'.format(ProxyIP, HTTPPort))
+
+        print('[ProxyConda.proxy] Done.')
+
+    def clear(self):
+        os.system('conda config --remove proxy_servers.http')
+        os.system('conda config --remove proxy_servers.https')
+
+        print('[ProxyConda.clear] Done.')
+
+
 ## Proxifiers ##
 
 if __name__ == '__main__':
@@ -268,6 +297,6 @@ if __name__ == '__main__':
         steps = recipe['Pipeline'][handler].replace(' ', '').strip().split(',')
         for step in steps:
             eval('obj.{}()'.format(step))
-        print('------------------------------')
+        print('-' * 30)
 
     print('[ProxyToSSHClient] Exit.')

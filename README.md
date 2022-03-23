@@ -13,6 +13,7 @@
 | bash <br>（可同时影响 wget，conda 等程序） | ProxyBash      | :heavy_check_mark: |                    |
 | Git 的 HTTP 方式                           | ProxyGitHTTP   | :heavy_check_mark: |                    |
 | SSH 方式的 GitHub 连接                     | ProxyGitHubSSH |                    | :heavy_check_mark: |
+| Conda                                    | ProxyConda     |  :heavy_check_mark: |                    |
 
 首先，配置 [recipe.json](./recipe.json)：
 

@@ -5,8 +5,9 @@
     "SocksPort": 10808
   },
   "Pipeline": {
-    "ProxyBash": "init, proxy",
-    "ProxyGitHTTP": "init, proxy",
-    "ProxyGitHubSSH": "init, proxy"
+    "ProxyBash": "proxy",
+    "ProxyGitHTTP": "proxy",
+    "ProxyGitHubSSH": "proxy",
+    "ProxyConda": "proxy"
   }
 }
