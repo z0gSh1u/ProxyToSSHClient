@@ -259,7 +259,7 @@ class ProxyConda(Proxifier):
 
         os.system('conda config --set proxy_servers.http http://{}:{}'.format(ProxyIP, HTTPPort))
         # We dont use https here since sometimes SSL certificate is invalid.
-        os.system('conda config --set proxy_servers.https http://{}:{}'.format(ProxyIP, HTTPPort))
+        os.system('conda config --set proxy_servers.https https://{}:{}'.format(ProxyIP, HTTPPort))
 
         print('[ProxyConda.proxy] Done.')
 

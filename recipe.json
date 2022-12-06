@@ -1,8 +1,8 @@
 {
   "Network": {
     "IP": "<SSHClient>",
-    "HTTPPort": 10809,
-    "SocksPort": 10808
+    "HTTPPort": 10811,
+    "SocksPort": 10810
   },
   "Pipeline": {
     "ProxyBash": "proxy",
